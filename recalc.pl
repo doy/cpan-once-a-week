@@ -30,7 +30,7 @@ UPDATE authors SET longest_start = ?, longest_length = ?,
   WHERE author_num = ?
 
 my $seinfeld = DateTimeX::Seinfeld->new(
-  start_date => {qw(year 2012 month 1 day 1 time_zone UTC)},
+  start_date => {qw(year 1995 month 8 day 13 time_zone UTC)},
   increment  => { weeks => 1 },
 );
 

@@ -48,9 +48,9 @@ CREATE TABLE releases (
   release_id INTEGER PRIMARY KEY,
   author_num INTEGER NOT NULL REFERENCES authors,
   dist_id    INTEGER NOT NULL REFERENCES dists,
-  version    REAL NOT NULL,
+  filename   VARCHAR NOT NULL,
   date       TIMESTAMP NOT NULL,
-  UNIQUE(author_num, dist_id, version)
+  UNIQUE(author_num, dist_id, filename)
 )
 
 $db->do(<<'');
@@ -66,7 +66,7 @@ FROM authors
 
 $db->do(<<'');
 CREATE VIEW release_info AS
-SELECT release_id, author_id, dist_name, version,
+SELECT release_id, author_id, dist_name, filename,
        datetime(date, 'unixepoch') AS date
 FROM releases NATURAL JOIN authors NATURAL JOIN dists
 

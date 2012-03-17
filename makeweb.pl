@@ -30,7 +30,7 @@ my $tt = Template->new({
   POST_CHOMP   => 1,
 });
 
-my $contestStart = DateTime->new(qw(year 2012 month 1 day 1 time_zone UTC));
+my $contestStart = DateTime->new(qw(year 1995 month 8 day 13 time_zone UTC));
 
 # Find the beginning of the current period (midnight UTC Sunday):
 my $today = DateTime->today;
